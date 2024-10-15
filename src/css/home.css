@@ -4,24 +4,36 @@
     position: fixed;
     left: 200px;
     top: 200px;
-    width: 200px;
-    height: 200px;
-    background-color: #ffffff;
+    width: 30%;
+    height: 20%;
+    background-color: lightblue;
 }
 
 .modalContent {
     display: grid;
-    grid-template-rows: 15% 40% 45%;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 15% 2fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
 }
 
 .closeBtn {
     grid-row: 1 / 2;
-    grid-column-start: 3;
+    grid-column-start: 4;
 }
 
 #adoptModal p {
     grid-row: 2 / 3;
-    grid-column: 2 / 3;
+    grid-column: 2 / 4;
 }
 
+#petName {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    height: 20px;
+}
+
+#petNameBtn {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    height: 26px;
+    margin-left: 5px;
+}
