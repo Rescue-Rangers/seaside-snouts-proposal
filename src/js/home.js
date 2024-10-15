@@ -11,6 +11,6 @@ adoptBtn.addEventListener('click', function() {
     adoptModal.style.display = "block";
 });
 
-// closeBtn.addEventListener('click', function() {
-//     adoptModal.style.display = "none";
-// })
+closeBtn.addEventListener('click', function() {
+    adoptModal.style.display = "none";
+})

@@ -8,3 +8,20 @@
     height: 200px;
     background-color: #ffffff;
 }
+
+.modalContent {
+    display: grid;
+    grid-template-rows: 15% 40% 45%;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.closeBtn {
+    grid-row: 1 / 2;
+    grid-column-start: 3;
+}
+
+#adoptModal p {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
