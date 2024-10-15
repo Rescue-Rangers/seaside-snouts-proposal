@@ -4,7 +4,7 @@
     position: fixed;
     left: 200px;
     top: 200px;
-    width: 30%;
+    width: 400px;
     height: 20%;
     background-color: lightblue;
 }
@@ -15,14 +15,13 @@
     grid-template-columns: 1fr 3fr 1fr 1fr;
 }
 
-.closeBtn {
+#closeBtn {
     grid-row: 1 / 2;
     grid-column-start: 4;
-}
-
-#adoptModal p {
-    grid-row: 2 / 3;
-    grid-column: 2 / 4;
+    width: 40%;
+    justify-self: end;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 #petName {
