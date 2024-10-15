@@ -2,5 +2,8 @@
 
 let userName = document.getElementById('userName');
 let adoptBtn = document.getElementsByTagName('button');
-console.log(userName);
-console.log(adoptBtn);
+let adoptModal = document.getElementById('adoptModal');
+
+adoptBtn.addEventListener('click', function() {
+    adoptModal.style.display = "block";
+})
