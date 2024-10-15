@@ -4,7 +4,8 @@ let userName = document.getElementById('userName');
 let adoptBtn = document.getElementById('adoptBtn');
 let adoptModal = document.getElementById('adoptModal');
 let closeBtn = document.getElementById('closeBtn');
-let modalContent = document.getElementById('modalContent');
+let modalContent = document.getElementById('adoptSuccess');
+let pet = "";
 
 //Set up modal actions
 adoptBtn.addEventListener('click', function() {
@@ -15,5 +16,6 @@ closeBtn.addEventListener('click', function() {
     adoptModal.style.display = "none";
 })
 
-// let congratsMsg = document.createElement('p');
-// modalContent.appendChild(congratsMsg);
+modalContent.innerHTML = `Congrats! You have adopted a ${pet}! What would you like to name them?`;
+
+
