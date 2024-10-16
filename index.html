@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta rel="stylesheet" href="~/src/global.css">
-    <meta rel="stylesheet" href="~/src/home.css">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/home.css">
     <title>Seaside Snouts - Home</title>
-    <script src="~/src/js/home.js" defer></script>
+    <script src="/src/js/home.js" defer></script>
 </head>
 <body>
     <main>
-        <h1>Seaside Snouts</h1>
+        <h1>SEASIDE SNOUTS</h1>
         <h2>Welcome to Seaside Snouts, where you can dive into an enchanting underwater world and embark on an exciting journey of marine rescue! In this immersive game, you'll adopt a variety of unique sea creatures, from playful dolphins to vibrant coral reef fish, each in need of your care and compassion. With every creature you save, you'll not only create a thriving sanctuary but also uncover the wonders of ocean conservation. Are you ready to make waves and become a hero of the sea?</h2>
+        <h3>What's your name?</h3>
         <form>
-            <label for="userName">Your Name:</label>
-            <input type="text" id="userName">
+            <input type="text" id="userName" class="inputField">
             <button type="button" id="adoptBtn">Adopt!</button>
         </form>
         <!-- see https://www.w3schools.com/howto/howto_css_modals.asp when ready for modal css & js -->
         <div id="adoptModal">
-            <div>
-                <span>&times;</span>
-                <p>`Congrats! You have adopted X! What would you like to name them?`</p>
+            <div id="modalContent">
+                <button type="button" id="closeBtn">&times;</button>
+                <img>
+                <p id="adoptSuccess">`Congrats! You have adopted X! What would you like to name them?`</p>
+                <input type="text" id="petName" class="inputField">
+                <button type="button" id="petNameBtn">Let's Go!</button>
             </div>
         </div>
     </main>
