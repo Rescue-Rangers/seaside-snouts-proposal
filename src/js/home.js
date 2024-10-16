@@ -9,9 +9,13 @@ let pet = "";
 
 //Set up modal actions
 adoptBtn.addEventListener('click', function() {
-    adoptModal.style.display = "block";
     let userNameInput = document.getElementById('userName').value;
-    return userNameInput;
+    if (!isNaN(userNameInput) || userNameInput.length <= 1) {
+        window.alert('Invalid name');
+    } else {
+        modalContent.innerHTML = `Congrats, ${userNameInput}! You have adopted a ${pet}! What would you like to name them?`;
+        adoptModal.style.display = "block";
+    }
 });
 
 
@@ -19,7 +23,6 @@ closeBtn.addEventListener('click', function() {
     adoptModal.style.display = "none";
 })
 
-modalContent.innerHTML = `Congrats! You have adopted a ${pet}! What would you like to name them?`;
 
 
 
