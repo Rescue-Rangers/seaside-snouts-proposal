@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/global.css">
     <link rel="stylesheet" href="/src/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Seaside Snouts - Home</title>
     <script src="/src/js/home.js" defer></script>
 </head>
@@ -20,27 +24,25 @@
         <!-- see https://www.w3schools.com/howto/howto_css_modals.asp when ready for modal css & js -->
         <div id="adoptModal">
             <div id="modalContent">
-                <button type="button" id="closeBtn">&times;</button>
-                <img>
+                <button type="button" class="closeBtn">&times;</button>
+                <img src="/assets/img/bluedolphin.png">
                 <p id="adoptSuccess">`Congrats! You have adopted X! What would you like to name them?`</p>
                 <input type="text" id="petName" class="inputField">
-                <button type="button" id="petNameBtn">Let's Go!</button>
+                <button type="button" id="petNameBtn">Go!</button>
             </div>
         </div>
     </main>
     <footer>
-        <nav class"footer-nav">
+        <nav class="footer-nav">
             <div class="footer-icons">
                 <i class="fa-solid fa-house-chimney"></i>
                 <i class="fa-solid fa-otter"></i>
                 <i class="fa-solid fa-circle-user"></i>
-                <i class="fa-solid fa-star"></i>
             </div>
             <ul>
                 <li>Home</li>
                 <li><a href="/src/html/game/index.html">Game</a></li>
                 <li><a href="/src/html/meet/meet.html">Meet the Devs</a></li>
-                <p>High Scores</p>
             </ul>
         </nav>
     </footer>
