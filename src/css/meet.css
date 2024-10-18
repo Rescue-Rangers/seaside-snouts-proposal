@@ -6,9 +6,9 @@
     --seaside-yellow: #F5D16E;
 }
 /*background-color: var(--seaside-blue); example*/
-body {
+/* body {
         
-}
+} */
 main {
     background-color: var(--seaside-white);
     min-height: calc(100vh - 150px);
@@ -20,9 +20,13 @@ header {
 h1 {
     text-align: center;
     margin: 0px;
+    font-weight: bold;
 }
 h2 {
     text-align: center;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+  font-style: normal;
 }
 section {
     display: grid;
@@ -84,5 +88,11 @@ footer {
 }
 .current-page {
     color: var(--seaside-white);
+}
+
+.dev-morgan > p, .dev-krissy > p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
