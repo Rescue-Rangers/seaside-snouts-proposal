@@ -6,9 +6,7 @@
     --seaside-yellow: #F5D16E;
 }
 /*background-color: var(--seaside-blue); example*/
-/* body {
-        
-} */
+
 main {
     background-color: var(--seaside-white);
     min-height: calc(100vh - 150px);
