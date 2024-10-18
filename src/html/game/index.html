@@ -12,22 +12,22 @@
 <body>
     <main>
     <header>
-        <h2>Progress to Rehabilitation: X/25</h2> <!--This is a placeholder to enter a JS to increment depending on if levels = 10 all at once-->
-        <h1>Seaside Snouts</h1>
+        <h3>Progress to Rehabilitation: X/25</h3> <!--This is a placeholder to enter a JS to increment depending on if levels = 10 all at once-->
+        <h1>SEASIDE SNOUTS</h1>
     </header>
         <h2>HAMILTON</h2> <!--Placeholder to fill in with JS pet's name from home page-->
-        <div id="pet-image">
-            <img src="https://placehold.co/200X300/png" alt="Sea Creature Friend Image">
-        </div>
+        <div class="pet-health">
+            <img class="pet-image" src="https://placehold.co/200X300/png" alt="Sea Creature Friend Image"><br>
         <label for="health">HEALTH</label><br>
         <progress id="health-bar" value="25" max="25"> 100% </progress>
-        <section>
+        </div>
+        <section class="stat-area">
             <div class="stat-numbers"> <!--Numbers are placeholders for JS-->
-                <i class="fas fa-drumstick-bite"></i>
+                <i class="fas fa-drumstick-bite hunger stat-icons"></i>
+                <i class="fa-solid fa-droplet hygiene stat-icons"></i>
+                <i class="fa-solid fa-face-smile happiness stat-icons"></i>
                 <p class="hunger">Hunger X/10</p>
-                <i class="fa-solid fa-droplet"></i>
                 <p class="hygiene">Hygiene X/10</p>
-                <i class="fa-solid fa-face-smile"></i>
                 <p class="happiness">Happiness X/10</p>
             </div>
             <div class="stat-buttons">
@@ -36,22 +36,18 @@
                 <button class="play-btn" type="button">Play</button>
             </div>
         </section>
-        <section>
-            <h3>Event text goes here!</h3>
-        </section>
+        <h3 class="event-text">Event text goes here!</h3>
         <footer>
-            <nav class"footer-nav">
-                <div class="footer-icons">
-                    <i class="fa-solid fa-house-chimney"></i>
-                    <i class="fa-solid fa-otter"></i>
-                    <i class="fa-solid fa-circle-user"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
+            <nav class="footer-nav">
                 <ul>
-                    <li><a href="../../../index.html">Home</a></li>
-                    <p>Game</p>
-                    <li><a href="../meet/meet.html">Meet the Devs</a></li>
-                    <p>High Scores</p>
+                    <i class="fa-solid fa-house-chimney footer-icons"></i>
+                    <i class="fa-solid fa-otter footer-icons"></i>
+                    <i class="fa-solid fa-circle-user footer-icons"></i>
+                    <i class="fa-solid fa-star footer-icons"></i>
+                    <li class="footer-links footer-list"><a href="../../../index.html">Home</a></li>
+                    <p class="footer-list current-page">Game</p>
+                    <li class="footer-links footer-list"><a href="../meet/meet.html">Meet the Devs</a></li>
+                    <p class="footer-list">High Scores</p>
                 </ul>
             </nav>
         </footer>
