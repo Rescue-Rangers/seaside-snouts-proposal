@@ -3,7 +3,7 @@
 let userName = document.getElementById('userName');
 let adoptBtn = document.getElementById('adoptBtn');
 let adoptModal = document.getElementById('adoptModal');
-let closeBtn = document.getElementById('closeBtn');
+let closeBtn = document.getElementsByClassName('closeBtn');
 let modalContent = document.getElementById('adoptSuccess');
 let petNameBtn = document.getElementById('petNameBtn');
 let pet = "";
@@ -29,7 +29,7 @@ adoptBtn.addEventListener('click', function() {
 });
 
 // Add close button functionality
-closeBtn.addEventListener('click', function() {
+closeBtn[0].addEventListener('click', function() {
     adoptModal.style.display = "none";
 })
 
