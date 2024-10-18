@@ -56,7 +56,7 @@ h1 {
 }
 
 h2 {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0 10% 0 10%;
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -101,13 +101,13 @@ form > button {
     border-style: solid;
     border-color: var(--seaside-yellow);
     border-radius: 8px;
-    overflow: auto;
 }
 
 #modalContent > p {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
+    margin-bottom: 0px;
 }
 
 /* Adopt Pet Modal CSS Grid */
@@ -115,7 +115,7 @@ form > button {
 #modalContent {
     display: grid;
     grid-template-rows: 15% 2fr 2fr 1fr;
-    grid-template-columns: 1fr 3fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 1% auto 15% auto;
     height: 55%;
 }
@@ -125,7 +125,9 @@ form > button {
     grid-row: 1 / 2;
     grid-column: 4 / 5;
     width: 8vw;
+    max-width: 40px;
     height: calc(.75 * 8vw);
+    max-height: 28px;
     justify-self: end;
     border-width: 5px;
     border-color: var(--seaside-yellow);
@@ -133,6 +135,7 @@ form > button {
     background-color: var(--seaside-orange);
     font-weight: bolder;
     margin-right: 3%;
+    margin-top: calc(.03 * vw);
 }
 
 #adoptModal p {
@@ -140,16 +143,28 @@ form > button {
     grid-column: 2 / 4;
 }
 
+#modalContent > img {
+    grid-row: 3 / 4;
+    grid-column: 2 / 4;
+    max-width: 100px;
+    justify-self: center;
+}
+
 #petName {
     grid-row: 4 / 5;
-    grid-column: 2 / 3;
+    grid-column: 2 / 4;
     height: 20px;
+    width: calc(100% - 85px);
 }
 
 #petNameBtn {
     grid-row: 4 / 5;
-    grid-column: 3 / 4;
+    grid-column: 2 / 4;
+    justify-self: end;
     height: 26px;
+    width: 40%;
+    min-width: 50px;
+    max-width: 70px;
     margin-left: 5px;
     border-style: solid;
     border-width: 5px;
@@ -167,15 +182,43 @@ form > button {
 
 /* mobile landscape */
 
-/* @media all and (min-width: 480px) {} */
+@media all and (min-width: 600px) {
+    form > button {
+        width: 15%;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+}
 
 /* tablet */
 
-/* @media all and (min-width: 768px) {} */
+@media all and (min-width: 768px) {
+    form > button {
+        width: 10%;
+    }
+}
 
 /* desktop */
 
-/* @media all and (min-width: 1024px) {} */
+@media all and (min-width: 1024px) {
+    form > button {
+        width: 8%;
+    }
+    
+    h1 {
+        padding-top: 5%;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    #modalContent > img {
+        max-width: 130px;
+    }
+}
 
 /* desktop wide */
 
