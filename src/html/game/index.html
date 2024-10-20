@@ -11,16 +11,16 @@
 </head>
 <body>
     <main>
-    <header>
-        <h3>Progress to Rehabilitation: X/25</h3> <!--This is a placeholder to enter a JS to increment depending on if levels = 10 all at once-->
-        <h1>SEASIDE SNOUTS</h1>
-    </header>
+        <header>
+            <h3>Progress to Rehabilitation: X/25</h3> <!--This is a placeholder to enter a JS to increment depending on if levels = 10 all at once-->
+            <h1>SEASIDE SNOUTS</h1>
+        </header>
         <section class="main-game">
             <h2>HAMILTON</h2> <!--Placeholder to fill in with JS pet's name from home page-->
             <div class="pet-health">
-                <img class="pet-image" src="../../../assets/img/bluedolphin.png" alt="blue dolphin friend image"><br>
+            <img class="pet-image" src="../../../assets/img/bluedolphin.png" alt="blue dolphin friend"><br>
                 <div class ="health-area">
-                    <label for="health">HEALTH</label><br>
+                    <label for="health-bar">HEALTH</label><br>
                     <progress id="health-bar" value="25" max="25"> 100% </progress>
                 </div>
             </div>
@@ -29,13 +29,17 @@
                     <i class="fas fa-drumstick-bite hunger stat-icons"></i>
                     <i class="fa-solid fa-droplet hygiene stat-icons"></i>
                     <i class="fa-solid fa-face-smile happiness stat-icons"></i>
-                    <p class="hunger">Hunger X/10</p>
-                    <p class="hygiene">Hygiene X/10</p>
-                    <p class="happiness">Happiness X/10</p>
+                    <p class="hunger words">Hunger X/10</p><p
+                    <p class="hygiene words">Hygiene X/10</p>
+                    <p class="happiness words">Happiness X/10</p>
+                    <p class="hunger-number numbers">X/10</p>
+                    <p class="hygiene-number numbers">X/10</p>
+                    <p class="happiness-number numbers">X/10</p>
                 </div>
                 <div class="stat-buttons">
                     <button class="feed-btn" type="button">Feed</button>
                     <button class="bathe-btn" type="button">Bathe</button>
+                    <button class="pet-btn" type="button">Pet</button>
                     <button class="play-btn" type="button">Play</button>
                 </div>
         </section>

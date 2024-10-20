@@ -156,7 +156,7 @@ footer {
 }
 
 
-@media screen and (max-width: 1024px) and (min-width: 796px) {
+@media screen and (max-width: 1024px) and (min-width: 769px) {
     section {
         display: grid;
         grid-template-columns: 40% 40%;
