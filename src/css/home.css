@@ -48,7 +48,9 @@ footer {
 }
 
 #meet-page:hover {
-    color: var(--seaside-white);
+    background-color: var(--seaside-white);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .current-page {
