@@ -7,6 +7,36 @@ let closeBtn = document.getElementsByClassName('closeBtn');
 let modalContent = document.getElementById('adoptSuccess');
 let petNameBtn = document.getElementById('petNameBtn');
 let pet = "";
+let imgSrc = document.getElementsByTagName('img');
+
+// Randomly generate pet and image
+//Set up each animal as a new object
+const blueDolphin = new Pet("blue dolphin", "/assets/img/bluedolphin.png", "A drawing of a blue dolphin.");
+
+const fish = new Pet("fish", "/assets/img/fish.png", "A drawing of a yellow and black-striped fish.");
+
+const flamingo = new Pet("flamingo", "assets/img/flamingo.png", "A drawing of a pink flamingo standing on one leg.");
+
+const pinkDolphin = new Pet("pink dolphin", "/assets/img/pinkdolphin.png", "A drawing of a pink dolphin.");
+
+const turtle = new Pet("sea turtle", "/assets/img/turtle1.png", "A drawing of a neutral colored sea turtle.");
+
+const monkey = new Pet("monkey", "/assets/img/monkey.png", "A drawing of a happy monkey crouching.");
+
+const petLibrary = [blueDolphin, fish, flamingo, pinkDolphin, turtle, monkey];
+
+let randomIndex = Math.floor(Math.random() * 6);
+console.log(randomIndex);
+
+let userPet = petLibrary[randomIndex];
+
+pet = userPet.animalType;
+let img = userPet.imgFile;
+let alt = userPet.altText;
+
+imgSrc[0].src = img;
+imgSrc[0].alt = alt;
+
 
 //Set up modal actions
 // Validate and capture user's name, then open next modal
@@ -51,6 +81,10 @@ petNameBtn.addEventListener('click', function() {
 })
 
 
+
+
+
+
 function checkForNumChar(input) {
     for (let i = 0; i < input.length; i++) {
         let checkNum = input.charCodeAt(i);
@@ -60,4 +94,10 @@ function checkForNumChar(input) {
             return false;
         }
     } return true;
+}
+
+function Pet(animal, img, alt) {
+    this.animalType = animal;
+    this.imgFile = img;
+    this.altText = alt;
 }

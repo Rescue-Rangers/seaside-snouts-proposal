@@ -199,6 +199,7 @@ form > button {
     grid-column: 2 / 4;
     max-width: 100px;
     justify-self: center;
+    margin-bottom: 2%;
 }
 
 #petName {
