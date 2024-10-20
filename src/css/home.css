@@ -21,6 +21,7 @@ main {
 
 footer {
     background-color: var(--seaside-orange);
+    width: 100vw;
 }
 
 .footer-nav {
@@ -47,7 +48,9 @@ footer {
 }
 
 .current-page {
-    color: var(--seaside-white);
+    background-color: var(--seaside-white);
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .no-game , .fa-otter {
@@ -187,6 +190,23 @@ form > button {
 
 
 /* mobile landscape */
+
+@media screen and (max-width: 480px) {
+    footer {
+        width: 100%;
+        margin: 0px;
+    }
+    .footer-nav ul {
+        text-align: center;
+        font-size: 1em;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0px;
+    }
+}
+
 
 @media all and (min-width: 600px) {
     form > button {
