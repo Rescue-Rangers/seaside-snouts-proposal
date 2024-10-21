@@ -1,9 +1,16 @@
+// IDs for dom methods
+let hungerNum = document.getElementById("hun-num");
+let hygieneNum = document.getElementById("hyg-num");
+let happinessNum = document.getElementById("hap-num");
+let hungerNum2 = document.getElementById("hun-num-two");
+let hygieneNum2 = document.getElementById("hyg-num-two");
+let happinessNum2 = document.getElementById("hap-num-two");
 // Prompt libraries
 
 // feed prompts
 // placeholder variables
-petName= "Hamilton";
-userName= "Krissy";
+let petName= "Hamilton";
+let userName= "Krissy";
 const feedPrompts= [
     `${petName} thought the food was just ok.`,
     `${petName} thought the food could use more seasoning.`,
@@ -42,7 +49,7 @@ const playPrompts= [
     `${petName} loved exploring the hidden cave.`,
     `${petName} found treasure during their adventure!`
 ]
-
+// Generate random prompt
 function randomPrompt(prompt) {
     let index = Math.floor(Math.random() * 6);
     return prompt[index];
@@ -50,24 +57,136 @@ function randomPrompt(prompt) {
 console.log(randomPrompt(playPrompts))
 
 const eventText = document.getElementById("event-text")
-
+// Replace event area with generated text
 function promptEvent(message) {
     eventText.textContent = message;
 }
+// click to increase hunger + happiness and decrease hygeine with feed button
+
 document.getElementById("feed-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(feedPrompts))
+    let randomAdd = Math.floor((Math.random() * 3) + 1);
+    let currentNum = +hungerNum.textContent;
+    if (currentNum < 10) {
+        currentNum += randomAdd;
+        currentNum = Math.min(currentNum, 10);
+        hungerNum.textContent = currentNum;
+        hungerNum2.textContent = currentNum;
+    }
+    let currentNum2 = +happinessNum.textContent;
+    let randomHappAdd = Math.floor((Math.random() * 3));
+    if (currentNum2 < 10) {
+        currentNum2 += randomHappAdd;
+        currentNum2 = Math.min(currentNum2, 10);
+        happinessNum.textContent = currentNum2;
+        happinessNum2.textContent = currentNum2;
+    }
+    let currentNum3 = +hygieneNum.textContent;
+    let randomHygSub = Math.floor((Math.random() * 2));
+    if (currentNum3 > 0) {
+        currentNum3 -= randomHygSub;
+        currentNum3 = Math.max(currentNum3, 0);
+        hygieneNum.textContent = currentNum3;
+        hygieneNum2.textContent = currentNum3;
+    }
 }
-)
 
+)
+// click to increase hygiene and happiness with bathe button
 document.getElementById("bathe-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(bathePrompts))
+    let randomAdd = Math.floor((Math.random() * 3) + 1);
+    let currentNum = +hygieneNum.textContent;
+    if (currentNum < 10) {
+        currentNum += randomAdd;
+        currentNum = Math.min(currentNum, 10);
+        hygieneNum.textContent = currentNum;
+        hygieneNum2.textContent = currentNum;
+    }
+    let currentNum2 = +happinessNum.textContent;
+    let randomHappAdd = Math.floor((Math.random() * 3));
+    if (currentNum2 < 10) {
+        currentNum2 += randomHappAdd;
+        currentNum2 = Math.min(currentNum2, 10);
+        happinessNum.textContent = currentNum2;
+        happinessNum2.textContent = currentNum2;
+    }
 }
 )
+// click to increase happiness with pet button
 document.getElementById("pet-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(petPrompts))
+    let randomAdd = Math.floor((Math.random() * 2) + 1);
+    let currentNum = +happinessNum.textContent;
+    if (currentNum < 10) {
+        currentNum += randomAdd;
+        currentNum = Math.min(currentNum, 10);
+        happinessNum.textContent = currentNum;
+        happinessNum2.textContent = currentNum;
+    }
 }
 )
+// click to increase happiness and decrease hunger and hygiene with play button
 document.getElementById("play-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(playPrompts))
+    let randomAdd = Math.floor((Math.random() * 3) + 1);
+    let currentNum = +happinessNum.textContent;
+    if (currentNum < 10) {
+        currentNum += randomAdd;
+        currentNum = Math.min(currentNum, 10);
+        happinessNum.textContent = currentNum;
+        happinessNum2.textContent = currentNum;
+    }
+    let currentNum2 = +hungerNum.textContent;
+    let randomHunSub = Math.floor((Math.random() * 2));
+    if (currentNum2 > 0) {
+        currentNum2 -= randomHunSub;
+        currentNum2 = Math.max(currentNum2, 0);
+        hungerNum.textContent = currentNum2;
+        hungerNum2.textContent = currentNum2;
+    }
+    let currentNum3 = +hygieneNum.textContent;
+    let randomHygSub = Math.floor((Math.random() * 3));
+    if (currentNum3 > 0) {
+        currentNum3 -= randomHygSub;
+        currentNum3 = Math.max(currentNum3, 0);
+        hygieneNum.textContent = currentNum3;
+        hygieneNum2.textContent = currentNum3;
+    }
 }
 )
+// Decrease Intervals
+setInterval(decreaseHunger, 3000);
+
+function decreaseHunger() {
+    let currentNum = +hungerNum.textContent;
+    if (currentNum > 0) {
+        hungerNum.textContent = currentNum - 1;
+        hungerNum2.textContent = currentNum - 1;
+    }
+}
+setInterval(decreaseHygiene, 3000);
+function decreaseHygiene() {
+    let currentNum = +hygieneNum.textContent;
+    if (currentNum > 0) {
+        hygieneNum.textContent = currentNum - 1;
+        hygieneNum2.textContent = currentNum - 1;
+    }
+}
+setInterval(decreaseHappiness, 3000);
+function decreaseHappiness() {
+    let currentNum = +happinessNum.textContent;
+    if (currentNum > 0) {
+        happinessNum.textContent = currentNum - 1;
+        happinessNum2.textContent = currentNum - 1;
+    }
+}
+
+//change the colors of the numbers based on stat
+hungerNum.addEventListener("load", colorChangeGreen);
+function colorChangeGreen() {
+    if (+hungerNum.textContent >= 8) {
+    // hungerNum.classList.add("colorChangeGreen")
+    hungerNum.style.color = "green";
+}
+}
