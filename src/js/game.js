@@ -5,6 +5,15 @@ let happinessNum = document.getElementById("hap-num");
 let hungerNum2 = document.getElementById("hun-num-two");
 let hygieneNum2 = document.getElementById("hyg-num-two");
 let happinessNum2 = document.getElementById("hap-num-two");
+let fullHungerNum = document.getElementById("full-hun-num");
+let fullHygieneNum = document.getElementById("full-hyg-num");
+let fullHappinessNum = document.getElementById("full-hap-num"); 
+
+// Status colors
+let statusGreen = "#4ba400";
+let statusOrange = "#d77900";
+let statusRed = "#ff3131";
+
 // Prompt libraries
 
 // feed prompts
@@ -62,7 +71,7 @@ function promptEvent(message) {
     eventText.textContent = message;
 }
 // click to increase hunger + happiness and decrease hygeine with feed button
-
+//status color function run upon click
 document.getElementById("feed-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(feedPrompts))
     let randomAdd = Math.floor((Math.random() * 3) + 1);
@@ -89,10 +98,14 @@ document.getElementById("feed-btn").addEventListener("click", function() {
         hygieneNum.textContent = currentNum3;
         hygieneNum2.textContent = currentNum3;
     }
+    if(currentNum) {
+        colorChange();
+    }
 }
 
 )
 // click to increase hygiene and happiness with bathe button
+//status color function run upon click
 document.getElementById("bathe-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(bathePrompts))
     let randomAdd = Math.floor((Math.random() * 3) + 1);
@@ -111,9 +124,13 @@ document.getElementById("bathe-btn").addEventListener("click", function() {
         happinessNum.textContent = currentNum2;
         happinessNum2.textContent = currentNum2;
     }
+    if(currentNum) {
+        colorChange();
+    }
 }
 )
 // click to increase happiness with pet button
+//status color function run upon click
 document.getElementById("pet-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(petPrompts))
     let randomAdd = Math.floor((Math.random() * 2) + 1);
@@ -124,9 +141,13 @@ document.getElementById("pet-btn").addEventListener("click", function() {
         happinessNum.textContent = currentNum;
         happinessNum2.textContent = currentNum;
     }
+    if(currentNum) {
+        colorChange();
+    }
 }
 )
 // click to increase happiness and decrease hunger and hygiene with play button
+//status color function run upon click
 document.getElementById("play-btn").addEventListener("click", function() {
     promptEvent(randomPrompt(playPrompts))
     let randomAdd = Math.floor((Math.random() * 3) + 1);
@@ -153,6 +174,9 @@ document.getElementById("play-btn").addEventListener("click", function() {
         hygieneNum.textContent = currentNum3;
         hygieneNum2.textContent = currentNum3;
     }
+    if(currentNum) {
+        colorChange();
+    }
 }
 )
 // Decrease Intervals
@@ -164,6 +188,9 @@ function decreaseHunger() {
         hungerNum.textContent = currentNum - 1;
         hungerNum2.textContent = currentNum - 1;
     }
+    if(currentNum) {
+        colorChange();
+    }
 }
 setInterval(decreaseHygiene, 3000);
 function decreaseHygiene() {
@@ -171,6 +198,9 @@ function decreaseHygiene() {
     if (currentNum > 0) {
         hygieneNum.textContent = currentNum - 1;
         hygieneNum2.textContent = currentNum - 1;
+    }
+    if(currentNum) {
+        colorChange();
     }
 }
 setInterval(decreaseHappiness, 3000);
@@ -180,15 +210,58 @@ function decreaseHappiness() {
         happinessNum.textContent = currentNum - 1;
         happinessNum2.textContent = currentNum - 1;
     }
+    if(currentNum) {
+        colorChange();
+    }
 }
 
 //change the colors of the numbers based on stat
-hungerNum.addEventListener("load", colorChangeGreen);
-function colorChangeGreen() {
-    if (+hungerNum.textContent >= 8) {
-    // hungerNum.classList.add("colorChangeGreen")
-    hungerNum.style.color = "green";
-}
+// green when 8-10, orange when 5-7, red when 0-4
+//need to do for both full numbers and responsive numbers
+function colorChange() {
+    let currentNum = +hungerNum.textContent;
+    if (currentNum >= 8) {
+        fullHungerNum.style.color = statusGreen;
+        hungerNum.style.color = statusGreen;
+        hungerNum2.style.color = statusGreen;
+    } else if ((currentNum < 8) && (currentNum > 4)) {
+        fullHungerNum.style.color = statusOrange;
+        hungerNum.style.color = statusOrange;
+        hungerNum2.style.color = statusOrange;
+    } else if ((currentNum <= 4) && (currentNum >= 0)) { 
+        fullHungerNum.style.color = statusRed;
+        hungerNum.style.color = statusRed;
+        hungerNum2.style.color = statusRed;
+    }
+    let currentNum2 = +hygieneNum.textContent;
+    if (currentNum2 >= 8) {
+        fullHygieneNum.style.color = statusGreen;
+        hygieneNum.style.color = statusGreen;
+        hygieneNum2.style.color = statusGreen;
+    } else if ((currentNum2 < 8) && (currentNum2 > 4)) {
+        fullHygieneNum.style.color = statusOrange;
+        hygieneNum.style.color = statusOrange;
+        hygieneNum2.style.color = statusOrange;
+    } else if ((currentNum2 <= 4) && (currentNum2 >= 0)) { 
+        fullHygieneNum.style.color = statusRed;
+        hygieneNum.style.color = statusRed;
+        hygieneNum2.style.color = statusRed;
+    }
+    let currentNum3 = +happinessNum.textContent;
+    if (currentNum3 >= 8) {
+        fullHappinessNum.style.color = statusGreen;
+        happinessNum.style.color = statusGreen;
+        happinessNum2.style.color = statusGreen;
+    } else if ((currentNum3 < 8) && (currentNum3 > 4)) {
+        fullHappinessNum.style.color = statusOrange;
+        happinessNum.style.color = statusOrange;
+        happinessNum2.style.color = statusOrange;
+    } else if ((currentNum3 <= 4) && (currentNum3 >= 0)) { 
+        fullHappinessNum.style.color = statusRed;
+        happinessNum.style.color = statusRed;
+        happinessNum2.style.color = statusRed;
+    }
+
 }
 
 
