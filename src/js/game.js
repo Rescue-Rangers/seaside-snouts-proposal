@@ -190,3 +190,86 @@ function colorChangeGreen() {
     hungerNum.style.color = "green";
 }
 }
+
+
+// Health score and bar
+// Health should go down any time a stat is at 0:
+// 1 stat at 0, -1 every three seconds
+// 2 stats at 0, -2 every three seconds
+// 3 stats at 0, -3 every three seconds.
+// Should go up when an individual stat goes up
+// The health score should turn colors following these ranges:
+// Green = 19-25
+// Yellow = 11-18
+// Red = Below 11
+
+let healthScore = 25;
+let progressBar = document.getElementsByTagName("progress");
+
+let gamePlay = setInterval(checkStatsDec, 3000);
+function checkStatsDec() {
+    let currentHun = +hungerNum.textContent;
+    let currentHyg = +hygieneNum.textContent;
+    let currentHap = +happinessNum.textContent;
+    if (currentHun == 0) {
+        healthScore -= 1;
+        Math.min(healthScore, 0);
+    }
+    if (currentHyg == 0) {
+        healthScore -= 1;
+        Math.min(healthScore, 0);
+    }
+    if (currentHap == 0) {
+        healthScore -= 1;
+        Math.min(healthScore, 0);
+    }
+    if (healthScore <= 0) {
+        clearInterval(gamePlay);
+        // Trigger dead pet modal here!
+    }
+    progressBar[0].value = healthScore;
+}
+
+setInterval(checkStatsInc, 1000);
+function checkStatsInc() {
+    let currentHun = +hungerNum.textContent;
+    let currentHyg = +hygieneNum.textContent;
+    let currentHap = +happinessNum.textContent;
+    if (currentHun == 10 && currentHyg == 10 && currentHap == 10) {
+        healthScore += 1;
+        Math.max(healthScore, 25);
+    }
+    progressBar[0].value = healthScore;
+}
+
+
+
+// Progress to Rehabilitation
+// The scoring should follow the calculation:
+// Progress should go up + 1 for every 1 second all individual stats are at score 10/10.
+// The text score and the visual scores should turn colors following these ranges:
+// Green = 19-25
+// Yellow = 11-18
+// Red = Below 11
+// Reaching a Progress to Rehabilitation Score of 25 triggers the successful rehabilitation of the pet.
+
+let progressToRehab = 0;
+
+let progressEl = document.getElementById("progress");
+
+let progress = setInterval(checkPoints, 1000);
+function checkPoints() {
+    let currentHun = +hungerNum.textContent;
+    let currentHyg = +hygieneNum.textContent;
+    let currentHap = +happinessNum.textContent;
+    
+    if (currentHun == 10 && currentHyg == 10 && currentHap == 10) {
+        progressToRehab += 1;
+        Math.max(progressToRehab, 25);
+    }
+    if (progressToRehab == 25) {
+        clearInterval(progress);
+        // Trigger successful rehabilitation modal here
+    }
+    progressEl.innerHTML = `Progress to Rehabilitation: ${progressToRehab}/25`;
+}
