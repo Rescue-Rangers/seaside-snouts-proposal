@@ -1,0 +1,189 @@
+:root {
+    --seaside-white: #FFF8F0;
+    --seaside-blue: #9CD9D2;
+    --seaside-navy: #3C315E;
+    --seaside-orange: #FFB870;
+    --seaside-yellow: #F5D16E;
+}
+/*background-color: var(--seaside-blue); example*/
+
+main {
+    background-color: var(--seaside-white);
+    min-height: calc(100vh - 150px);
+}
+header {
+    height: 60px;
+    margin: 0px;
+}
+h1 {
+    text-align: center;
+    margin: 0px;
+    font-weight: bold;
+}
+h2 {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Lato", sans-serif;
+  font-style: normal;
+}
+section {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-evenly;
+
+}
+.dev-morgan {
+    width: 400px;
+    margin-left: 20px;
+}
+.dev-morgan img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 5px 5px 5px 5px;
+    border-color: var(--seaside-blue);
+}
+.dev-krissy {
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 20px;
+}
+.dev-krissy img {
+    margin-top: 48px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 58%;
+    border-style: solid;
+    border-width: 5px 5px 5px 5px;
+    border-color: var(--seaside-blue);
+}
+footer {
+    background-color: var(--seaside-orange);
+    width: 100vw;
+}
+.footer-nav {
+    border-top-style: solid;
+    border-width: 10px 0px 0px 0px;
+    border-color: var(--seaside-yellow);
+    height: 150px;
+ }
+
+
+.footer-nav ul {
+    list-style-type: none;
+    text-align: center;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px;
+}
+.footer-icons {
+    margin-top: 30px;
+    font-size: 30px
+}
+.current-page {
+    background-color: var(--seaside-white);
+    padding: 10px;
+    border-radius: 10px;
+}
+.dev-morgan > p, .dev-krissy > p {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* response design styling */
+@media screen and (max-width: 480px) {
+    section {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    width: 100%;
+    }
+    .dev-morgan, .dev-krissy {
+        margin: 10px 0px;
+        width: 100%;
+    }
+    footer {
+        width: 100%;
+        margin: 0px;
+    }
+    .footer-nav ul {
+        text-align: center;
+        font-size: 1em;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0px;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+    section {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        width: 100%;
+        }
+        .dev-morgan, .dev-krissy {
+            margin: 10px 0px;
+            width: 100%;
+        }
+    .dev-krissy img {
+        width: 65%;
+        margin-top: 90px;
+    }
+    .dev-morgan img {
+        width: 90%;
+    }
+    footer {
+        width: 100%;
+        margin: 0px;
+    }
+    .footer-nav ul {
+        text-align: center;
+        font-size: 1em;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0px;
+}
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    section {
+        display: grid;
+        grid-template-columns: 40% 40%;
+        width: 100%;
+        }
+        .dev-morgan, .dev-krissy {
+            margin: 10px 0px;
+            width: 100%;
+        }
+    .dev-krissy img {
+        width: 65%;
+        margin-top: 90px;
+    }
+    .dev-morgan img {
+        width: 90%;
+    }
+    footer {
+        width: 100%;
+        margin: 0px;
+    }
+    .footer-nav ul {
+        text-align: center;
+        font-size: 1em;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 0px;
+}
+}

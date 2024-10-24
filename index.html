@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/css/global.css">
+    <link rel="stylesheet" href="/src/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Seaside Snouts - Home</title>
+    <script src="/src/js/home.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>SEASIDE SNOUTS</h1>
+        <h2>Welcome to Seaside Snouts, where you can dive into an enchanting underwater world and embark on an exciting journey of marine rescue! In this immersive game, you'll adopt a variety of unique sea creatures, from playful dolphins to vibrant coral reef fish, each in need of your care and compassion. With every creature you save, you'll not only create a thriving sanctuary but also uncover the wonders of ocean conservation. Are you ready to make waves and become a hero of the sea?</h2>
+        <h3>What's your name?</h3>
+        <form>
+            <input type="text" id="userName" class="inputField" label="userName">
+            <button type="button" id="adoptBtn">Adopt!</button>
+        </form>
+        <div id="adoptModal">
+            <div id="modalContent">
+                <button type="button" class="closeBtn">&times;</button>
+                <img src="/assets/img/bluedolphin.png" alt="A drawing of a blue dolphin.">
+                <p id="adoptSuccess">`Congrats! You have adopted X! What would you like to name them?`</p>
+                <input type="text" id="petName" class="inputField">
+                <button type="button" id="petNameBtn">Go!</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+            <ul>
+                <i class="fa-solid fa-house-chimney footer-icons"></i>
+                <i class="fa-solid fa-otter footer-icons"></i>
+                <i class="fa-solid fa-circle-user footer-icons"></i>
+                <i class="fa-solid fa-star footer-icons"></i>
+                <li class="footer-links footer-list current-page">Home</li>
+                <li class="footer-links footer-list tooltip no-game">Game<span class="tooltiptext">No current game found</span></li>
+                <p class="footer-links footer-list"><a href="/src/html/meet/meet.html" id="meet-page">Meet the Devs</a></p>
+                <p class="footer-list">High Scores</p>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
