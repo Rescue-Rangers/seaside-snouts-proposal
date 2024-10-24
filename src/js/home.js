@@ -1,4 +1,7 @@
 //#4 - Form for User's Name
+
+// const { json } = require("stream/consumers");
+
 //Set up modal display
 let userName = document.getElementById('userName');
 let adoptBtn = document.getElementById('adoptBtn');
@@ -25,6 +28,17 @@ const turtle = new Pet("sea turtle", "/assets/img/turtle1.png", "A drawing of a 
 const monkey = new Pet("monkey", "/assets/img/monkey.png", "A drawing of a happy monkey crouching.");
 
 const petLibrary = [blueDolphin, fish, flamingo, pinkDolphin, turtle, monkey];
+
+// JSON Homework - Morgan
+getPets().then(petJSON => {
+    console.log(petJSON);
+});
+
+function getPets() {
+    return fetch('morgan-json.json')
+        .then(response => response.json())
+}
+// End of JSON Homework - Morgan
 
 let randomIndex = Math.floor(Math.random() * 6);
 
