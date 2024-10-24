@@ -5,6 +5,7 @@ let adoptBtn = document.getElementById('adoptBtn');
 let adoptModal = document.getElementById('adoptModal');
 let closeBtn = document.getElementsByClassName('closeBtn');
 let modalContent = document.getElementById('adoptSuccess');
+let petName = document.getElementById('petName');
 let petNameBtn = document.getElementById('petNameBtn');
 let pet = "";
 let imgSrc = document.getElementsByTagName('img');
@@ -26,7 +27,6 @@ const monkey = new Pet("monkey", "/assets/img/monkey.png", "A drawing of a happy
 const petLibrary = [blueDolphin, fish, flamingo, pinkDolphin, turtle, monkey];
 
 let randomIndex = Math.floor(Math.random() * 6);
-console.log(randomIndex);
 
 let userPet = petLibrary[randomIndex];
 
@@ -37,11 +37,14 @@ let alt = userPet.altText;
 imgSrc[0].src = img;
 imgSrc[0].alt = alt;
 
+// Add animal type to local storage to use on Game Page
+localStorage.setItem('animalType', pet);
 
 //Set up modal actions
 // Validate and capture user's name, then open next modal
 adoptBtn.addEventListener('click', function() {
     let userNameInput = document.getElementById('userName').value;
+    localStorage.setItem('userName', userName.value);
     if (!userNameInput) {
         window.alert('Please enter your name.');
     } else if (!checkForNumChar(userNameInput)) {
@@ -66,6 +69,7 @@ closeBtn[0].addEventListener('click', function() {
 // Validate and capture pet's name, then navigate user to Game page
 petNameBtn.addEventListener('click', function() {
     let petNameInput = document.getElementById('petName').value;
+    localStorage.setItem('petName', petNameInput);
     if (!petNameInput) {
         window.alert('Please enter a name for your pet.');
     } else if (!checkForNumChar(petNameInput)) {

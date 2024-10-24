@@ -8,18 +8,24 @@ let happinessNum2 = document.getElementById("hap-num-two");
 let fullHungerNum = document.getElementById("full-hun-num");
 let fullHygieneNum = document.getElementById("full-hyg-num");
 let fullHappinessNum = document.getElementById("full-hap-num"); 
+let petNameH2 = document.getElementById("petName");
 
 // Status colors
 let statusGreen = "#4ba400";
 let statusOrange = "#d77900";
 let statusRed = "#ff3131";
 
+// Plug in data from Home Page
+let animalType = localStorage.getItem('animalType');
+let userName = localStorage.getItem('userName');
+let petName = localStorage.getItem('petName');
+petNameH2.innerHTML = petName;
+
 // Prompt libraries
 
 // feed prompts
-// placeholder variables
-let petName= "Hamilton";
-let userName= "Krissy";
+
+
 const feedPrompts= [
     `${petName} thought the food was just ok.`,
     `${petName} thought the food could use more seasoning.`,
