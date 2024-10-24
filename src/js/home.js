@@ -27,32 +27,28 @@ const turtle = new Pet("sea turtle", "/assets/img/turtle1.png", "A drawing of a 
 
 const monkey = new Pet("monkey", "/assets/img/monkey.png", "A drawing of a happy monkey crouching.");
 
-const petLibrary = [blueDolphin, fish, flamingo, pinkDolphin, turtle, monkey];
 
 // JSON Homework - Morgan
-getPets().then(petJSON => {
-    console.log(petJSON);
+// const petLibrary = [blueDolphin, fish, flamingo, pinkDolphin, turtle, monkey];
+let petJSON = getPets().then(petJSON => {
+    // Generate random number and pet
+    let randomIndex = Math.floor(Math.random() * 6);
+    let userPet = petJSON.petLibrary[randomIndex];
+    // Assign pet values to variables
+    pet = userPet.animalType;
+    let img = userPet.imgFile;
+    let alt = userPet.altText;
+    imgSrc[0].src = img;
+    imgSrc[0].alt = alt;
+    // Add animal type to local storage to use on Game Page
+    localStorage.setItem('animalType', pet);
 });
 
 function getPets() {
     return fetch('morgan-json.json')
         .then(response => response.json())
-}
+    }
 // End of JSON Homework - Morgan
-
-let randomIndex = Math.floor(Math.random() * 6);
-
-let userPet = petLibrary[randomIndex];
-
-pet = userPet.animalType;
-let img = userPet.imgFile;
-let alt = userPet.altText;
-
-imgSrc[0].src = img;
-imgSrc[0].alt = alt;
-
-// Add animal type to local storage to use on Game Page
-localStorage.setItem('animalType', pet);
 
 //Set up modal actions
 // Validate and capture user's name, then open next modal
@@ -97,11 +93,6 @@ petNameBtn.addEventListener('click', function() {
         return petNameInput;
     }
 })
-
-
-
-
-
 
 function checkForNumChar(input) {
     for (let i = 0; i < input.length; i++) {
