@@ -17,6 +17,8 @@ body {
 main {
     text-align: center;
     min-height: calc(100vh - 150px);
+    max-width: 70%;
+    margin: auto;
 }
 
 footer {

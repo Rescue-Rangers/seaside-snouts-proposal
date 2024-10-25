@@ -17,6 +17,8 @@ body {
 main {
     text-align: center;
     min-height: calc(100vh - 150px);
+    max-width: 70%;
+    margin: auto;
 }
 
 footer {
@@ -48,6 +50,12 @@ footer {
 }
 
 #meet-page:hover {
+    background-color: var(--seaside-white);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#game-page:hover {
     background-color: var(--seaside-white);
     padding: 10px;
     border-radius: 10px;
@@ -86,25 +94,28 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     margin-top: 8px;
-    margin-bottom: calc(.10*100vw);
-    width: 20%;
+    margin-bottom: calc(.05*100vw);
+    width: max-content;
+    height: 40px;
     border-style: solid;
     border-width: 5px;
-    border-color: var(--seaside-yellow);
+    border-color: #f15555;
     border-radius: 8px;
-    background-color: var(--seaside-orange);
+    background-color: #ff3131;
     font-weight: bolder;
     font-family: "Lato", sans-serif;
     font-style: normal;
+    color: var(--seaside-white);
 }
 
 #returnToPet {
-    display: block;
+    display: "block";
     margin-left: auto;
     margin-right: auto;
     margin-top: 8px;
-    margin-bottom: calc(.10*100vw);
-    width: 20%;
+    margin-bottom: 8px;
+    width: max-content;
+    height: 40px;
     border-style: solid;
     border-width: 5px;
     border-color: var(--seaside-yellow);
@@ -122,8 +133,8 @@ h3 {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 100vw;
-    max-width: 80vw;
-    height: 40vh;
+    max-width: 60vw;
+    height: fit-content;
     z-index: 1;
     background-color: var(--seaside-white);
     border-style: solid;
@@ -136,13 +147,14 @@ h3 {
     font-weight: 400;
     font-style: normal;
     margin-bottom: 0px;
+    font-size: 14px;
 }
 
-/* Adopt Pet Modal CSS Grid */
+/* Are You Sure Modal CSS Grid */
 
 #modalContent {
     display: grid;
-    grid-template-rows: 15% 2fr 2fr 1fr;
+    grid-template-rows: 15% 2fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 1% auto 15% auto;
     height: 55%;
@@ -171,7 +183,7 @@ h3 {
     grid-column: 2 / 4;
 }
 
-#modalContent > img {
+img {
     grid-row: 3 / 4;
     grid-column: 2 / 4;
     max-width: 100px;
@@ -180,14 +192,13 @@ h3 {
 }
 
 #cancelBtn {
-    grid-row: 4 / 5;
+    grid-row: 3 / 4;
     grid-column: 2 / 4;
-    justify-self: end;
-    height: 26px;
-    width: 40%;
-    min-width: 50px;
-    max-width: 70px;
+    justify-self: center;
+    height: 30px;
+    width: max-content;
     margin-left: 5px;
+    margin-top: 8px;
     border-style: solid;
     border-width: 5px;
     border-color: var(--seaside-yellow);
@@ -201,20 +212,20 @@ h3 {
 #abandonBtn {
     grid-row: 4 / 5;
     grid-column: 2 / 4;
-    justify-self: end;
-    height: 26px;
-    width: 40%;
-    min-width: 50px;
-    max-width: 70px;
+    justify-self: center;
+    height: 30px;
+    width: max-content;
     margin-left: 5px;
+    margin-top: 8px;
     border-style: solid;
     border-width: 5px;
-    border-color: var(--seaside-yellow);
+    border-color: #f15555;
     border-radius: 8px;
-    background-color: var(--seaside-orange);
+    background-color: #ff3131;
     font-weight: bolder;
     font-family: "Lato", sans-serif;
     font-style: normal;
+    color: var(--seaside-white);
 }
 
 
@@ -237,31 +248,42 @@ h3 {
         justify-content: space-evenly;
         margin: 0px;
     }
+    #areYouSure {
+        max-width: 50vw;
+    }
 }
 
 
 @media all and (min-width: 600px) {
-    form > button {
+    button {
         width: 15%;
     }
 
     h2 {
         font-size: 16px;
     }
+    
+    #areYouSure {
+        max-width: 40vw;
+    }
 }
 
 /* tablet */
 
 @media all and (min-width: 768px) {
-    form > button {
+    button {
         width: 10%;
+    }
+    #areYouSure {
+        height: min-content; 
+        max-width: 40vw;
     }
 }
 
 /* desktop */
 
 @media all and (min-width: 1024px) {
-    form > button {
+    button {
         width: 8%;
     }
     
@@ -273,14 +295,24 @@ h3 {
         font-size: 18px;
     }
 
-    #modalContent > img {
+    img {
         max-width: 130px;
+    }
+
+    #areYouSure {
+        height: min-content; 
+        max-width: 30vw;
     }
 }
 
 /* desktop wide */
 
-/* @media all and (min-width: 1200px) {} */
+@media all and (min-width: 1200px) {
+    #areYouSure {
+        height: min-content; 
+        max-width: 20vw;
+    }
+}
 
 
 

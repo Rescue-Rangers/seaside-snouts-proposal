@@ -6,6 +6,8 @@ let welcomeH2 = document.getElementsByTagName('h2');
 let textH3 = document.getElementsByTagName('h3');
 let cancelBtn = document.getElementById('cancelBtn');
 let abandonBtn = document.getElementById('abandonBtn');
+let abandonPet = document.getElementById('abandonPet');
+let returnToPet = document.getElementById('returnToPet');
 
 let pet = localStorage.getItem('animalType');
 let petName = localStorage.getItem('petName');
@@ -19,5 +21,32 @@ textH3[0].innerHTML = `${petName} has missed you and your underwater adventure! 
 
 imgSrc[0].src = imgFile;
 imgSrc[0].alt = alt;
-imgSrc[1].src = imgFile;
-imgSrc[1].alt = alt;
+
+
+// Set up Are You Sure modal
+
+abandonPet.addEventListener('click', function() {
+    areYouSure.style.display = "block";
+    console.log('please appear');
+})
+
+closeBtn[0].addEventListener('click', function() {
+    areYouSure.style.display = "none";
+})
+
+cancelBtn.addEventListener('click', function() {
+    areYouSure.style.display = "none";
+})
+
+// Redirect user to Home Page to start over if abandoning their current pet
+
+abandonBtn.addEventListener('click', function() {
+    window.location.assign('../../../../index.html');
+})
+
+// Redirect user to Game Page if they want to return to their current pet 
+
+returnToPet.addEventListener('click', function() {
+    window.location.assign('/src/html/game/index.html');
+})
+
