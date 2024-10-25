@@ -129,7 +129,8 @@ form > button {
     margin-right: auto;
     margin-top: 8px;
     margin-bottom: calc(.10*100vw);
-    width: 20%;
+    width: max-content;
+    height: 40px;
     border-style: solid;
     border-width: 5px;
     border-color: var(--seaside-yellow);
@@ -146,10 +147,10 @@ form > button {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 100vw;
-    max-width: 80vw;
-    height: 40vh;
-    z-index: 1;
+    width: 60vw;
+    height: fit-content;
+    max-height: 80vh;
+    z-index: 99;
     background-color: var(--seaside-white);
     border-style: solid;
     border-color: var(--seaside-yellow);
@@ -161,16 +162,19 @@ form > button {
     font-weight: 400;
     font-style: normal;
     margin-bottom: 0px;
+    font-size: 14px;
+    z-index: 99;
 }
 
 /* Adopt Pet Modal CSS Grid */
 
 #modalContent {
     display: grid;
-    grid-template-rows: 15% 2fr 2fr 1fr;
+    grid-template-rows: 15% 2fr 2fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 1% auto 15% auto;
     height: 55%;
+    z-index: 99;
 }
 
 .closeBtn {
@@ -208,15 +212,16 @@ form > button {
     grid-row: 4 / 5;
     grid-column: 2 / 4;
     height: 20px;
-    width: calc(100% - 85px);
+    width: auto;
+    justify-self: center;
 }
 
 #petNameBtn {
-    grid-row: 4 / 5;
+    grid-row: 5 / 6;
     grid-column: 2 / 4;
-    justify-self: end;
-    height: 26px;
-    width: 40%;
+    justify-self: center;
+    width: max-content;
+    height: 40px;
     min-width: 50px;
     max-width: 70px;
     margin-left: 5px;
@@ -229,6 +234,14 @@ form > button {
     font-family: "Lato", sans-serif;
     font-style: normal;
 }
+
+/* #modalBackground {
+    width: 100%;
+    height: 100%;
+    background-color: var(--seaside-white);
+    opacity: 0.5;
+    z-index: 50;
+} */
 
 
 /* Accounting for responsive design */
@@ -250,6 +263,9 @@ form > button {
         justify-content: space-evenly;
         margin: 0px;
     }
+    #adoptModal {
+        max-width: 70vw;
+    }
 }
 
 
@@ -261,6 +277,10 @@ form > button {
     h2 {
         font-size: 16px;
     }
+
+    #adoptModal {
+        max-width: 40vw;
+    }
 }
 
 /* tablet */
@@ -268,6 +288,11 @@ form > button {
 @media all and (min-width: 768px) {
     form > button {
         width: 10%;
+    }
+
+    #adoptModal {
+        height: min-content;
+        max-width: 40vw;
     }
 }
 
@@ -289,11 +314,21 @@ form > button {
     #modalContent > img {
         max-width: 130px;
     }
+
+    #adoptModal {
+        height: min-content;
+        max-width: 30vw;
+    }
 }
 
 /* desktop wide */
 
-/* @media all and (min-width: 1200px) {} */
+@media all and (min-width: 1200px) {
+    #adoptModal {
+        height: min-content;
+        max-width: 20vw;
+    }
+}
 
 
 
