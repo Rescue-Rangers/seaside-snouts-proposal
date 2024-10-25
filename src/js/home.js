@@ -39,6 +39,8 @@ imgSrc[0].alt = alt;
 
 // Add animal type to local storage to use on Game Page
 localStorage.setItem('animalType', pet);
+localStorage.setItem('imgFile', img);
+localStorage.setItem('alt', alt);
 
 //Set up modal actions
 // Validate and capture user's name, then open next modal
@@ -83,11 +85,6 @@ petNameBtn.addEventListener('click', function() {
         return petNameInput;
     }
 })
-
-
-
-
-
 
 function checkForNumChar(input) {
     for (let i = 0; i < input.length; i++) {
