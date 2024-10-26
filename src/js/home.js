@@ -9,6 +9,7 @@ let petName = document.getElementById('petName');
 let petNameBtn = document.getElementById('petNameBtn');
 let pet = "";
 let imgSrc = document.getElementsByTagName('img');
+let modalBackground = document.getElementById('modalBackground');
 
 // Randomly generate pet and image
 //Set up each animal as a new object
@@ -59,6 +60,7 @@ adoptBtn.addEventListener('click', function() {
         modalContent.innerHTML = `Congrats, ${userNameInput}! You have adopted a ${pet}! What would you like to name them?`;
         document.getElementById('userName').value = "";
         adoptModal.style.display = "block";
+        modalBackground.style.display = "initial";
         return userNameInput;
     }
 });
@@ -66,6 +68,7 @@ adoptBtn.addEventListener('click', function() {
 // Add close button functionality
 closeBtn[0].addEventListener('click', function() {
     adoptModal.style.display = "none";
+    modalBackground.style.display = "none";
 })
 
 // Validate and capture pet's name, then navigate user to Game page

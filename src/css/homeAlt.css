@@ -140,6 +140,7 @@ h3 {
     border-style: solid;
     border-color: var(--seaside-yellow);
     border-radius: 8px;
+    z-index: 99;
 }
 
 #modalContent > p {
@@ -148,6 +149,7 @@ h3 {
     font-style: normal;
     margin-bottom: 0px;
     font-size: 14px;
+    z-index: 99;
 }
 
 /* Are You Sure Modal CSS Grid */
@@ -158,6 +160,7 @@ h3 {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin: 1% auto 15% auto;
     height: 55%;
+    z-index: 99;
 }
 
 .closeBtn {
@@ -226,6 +229,18 @@ img {
     font-family: "Lato", sans-serif;
     font-style: normal;
     color: var(--seaside-white);
+}
+
+#modalBackground {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--seaside-white);
+    opacity: 0.5;
+    z-index: 50;
 }
 
 

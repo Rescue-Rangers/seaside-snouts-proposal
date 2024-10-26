@@ -8,6 +8,7 @@ let cancelBtn = document.getElementById('cancelBtn');
 let abandonBtn = document.getElementById('abandonBtn');
 let abandonPet = document.getElementById('abandonPet');
 let returnToPet = document.getElementById('returnToPet');
+let modalBackground = document.getElementById('modalBackground');
 
 let pet = localStorage.getItem('animalType');
 let petName = localStorage.getItem('petName');
@@ -27,15 +28,18 @@ imgSrc[0].alt = alt;
 
 abandonPet.addEventListener('click', function() {
     areYouSure.style.display = "block";
+    modalBackground.style.display = "initial";
     console.log('please appear');
 })
 
 closeBtn[0].addEventListener('click', function() {
     areYouSure.style.display = "none";
+    modalBackground.style.display = "none";
 })
 
 cancelBtn.addEventListener('click', function() {
     areYouSure.style.display = "none";
+    modalBackground.style.display = "none";
 })
 
 // Redirect user to Home Page to start over if abandoning their current pet
