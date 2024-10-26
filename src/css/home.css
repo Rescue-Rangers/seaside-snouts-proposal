@@ -278,10 +278,6 @@ form > button {
         width: 15%;
     }
 
-    h2 {
-        font-size: 16px;
-    }
-
     #adoptModal {
         max-width: 40vw;
     }
@@ -312,7 +308,7 @@ form > button {
     }
 
     h2 , h3 {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     #modalContent > img {
@@ -320,7 +316,6 @@ form > button {
     }
 
     #adoptModal {
-        height: min-content;
         max-width: 30vw;
     }
 }
@@ -329,7 +324,6 @@ form > button {
 
 @media all and (min-width: 1200px) {
     #adoptModal {
-        height: min-content;
         max-width: 20vw;
     }
 
@@ -338,7 +332,13 @@ form > button {
     }
 
     h2 , h3 {
-        font-size: 24px;
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 1440px) {
+    h2 , h3 {
+        font-size: 32px;
     }
 }
 
