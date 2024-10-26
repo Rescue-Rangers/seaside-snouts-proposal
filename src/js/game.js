@@ -9,6 +9,9 @@ let fullHungerNum = document.getElementById("full-hun-num");
 let fullHygieneNum = document.getElementById("full-hyg-num");
 let fullHappinessNum = document.getElementById("full-hap-num"); 
 let petNameH2 = document.getElementById("petName");
+let death = document.getElementById("death-container");
+let deathP = document.getElementById("name-pet-name");
+let deathSendOff = document.getElementById("pet-sendoff");
 
 // Status colors
 let statusGreen = "#4ba400";
@@ -305,6 +308,11 @@ function checkStatsDec() {
     if (healthScore <= 0) {
         clearInterval(gamePlay);
         // Trigger dead pet modal here!
+        deathP.innerHTML = `Sadly, ${userName}, ${petName} has died.`;
+        deathSendOff.innerHTML = `The boat catches on fire, and ${petName} is sent off in a blazing, yet touching ceremony.`
+        death.style.visibility = "visible";
+
+
     }
     progressBar[0].value = healthScore;
 }
@@ -320,8 +328,6 @@ function checkStatsInc() {
     }
     progressBar[0].value = healthScore;
 }
-
-
 
 // Progress to Rehabilitation
 // The scoring should follow the calculation:

@@ -194,6 +194,46 @@ footer {
 .colorChangeGreen {
     color: var(--status-green);
 }
+#death-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+
+}
+#death-modal-content {
+    height:auto;
+    width:70%;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 5);
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-color: aquamarine;
+    border-radius: 5px;
+    display: block;
+}
+.death-modal-button {
+    background-color: var(--seaside-orange);
+    font-size: 1em;
+    width: 100px;
+    border-color: var(--seaside-yellow);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 8px;
+}
+.fa-ship {
+    font-size: 200px;
+    margin-bottom: 30px;
+}
 
 /* Responsive designs */
 @media screen and (max-width: 480px) {
