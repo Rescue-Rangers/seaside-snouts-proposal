@@ -74,6 +74,7 @@ h3 {
 /* Note: The way to change the progress bar color is accent-color */
 #health-bar {
     width: 80%;
+    accent-color: var(--status-green);
 }
 .stat-icons {
     font-size: 25px;

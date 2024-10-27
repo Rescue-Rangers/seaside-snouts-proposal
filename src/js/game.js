@@ -21,6 +21,7 @@ let rehabSendOff = document.getElementById("pet-rehab");
 let petImagePlace = document.getElementById("main-pet-image");
 let rehabImagePlace = document.getElementById("rehab-pet-image");
 let modalButton = document.getElementById("modal-btn");
+let healthBar = document.getElementById("health-bar");
 
 // Status colors
 let statusGreen = "#4ba400";
@@ -338,6 +339,18 @@ function checkStatsDec() {
 
     }
     progressBar[0].value = healthScore;
+    healthColorChange();
+}
+
+
+function healthColorChange() {
+    if (healthScore >=19) {
+        healthBar.style.accentColor = statusGreen;
+    } else if ((healthScore < 19) && (healthScore >=11)) {
+        healthBar.style.accentColor = statusOrange;
+    } else if (healthScore < 11) {
+        healthBar.style.accentColor = statusRed;
+    }
 }
 
 setInterval(checkStatsInc, 1000);
