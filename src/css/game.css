@@ -59,7 +59,7 @@ h3 {
     font-size: 20px;
     margin-bottom: 50px;
 }
-.pet-image {
+#main-pet-image {
     width: 30%;
 }
 .health-area {
@@ -221,7 +221,7 @@ footer {
     border-radius: 5px;
     display: block;
 }
-.death-modal-button {
+.modal-btn {
     background-color: var(--seaside-orange);
     font-size: 1em;
     width: 100px;
@@ -234,6 +234,36 @@ footer {
     font-size: 200px;
     margin-bottom: 30px;
 }
+#rehab-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+}
+#rehab-modal-content {
+    height:auto;
+    width:70%;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 5);
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-color: aquamarine;
+    border-radius: 5px;
+    display: block;
+}
+#rehab-pet-image {
+    width: 30%;
+}
+
 
 /* Responsive designs */
 @media screen and (max-width: 480px) {
@@ -258,7 +288,10 @@ footer {
         margin: 20px;
         padding: 0px 17px 0px 0px;
 }
-    .pet-image {
+    #main-pet-image {
+        width: 50%;
+    }
+    #rehab-pet-image {
         width: 50%;
     }
     section.stat-area {
