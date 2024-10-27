@@ -20,6 +20,7 @@ let rehabP = document.getElementById("congrats-names");
 let rehabSendOff = document.getElementById("pet-rehab");
 let petImagePlace = document.getElementById("main-pet-image");
 let rehabImagePlace = document.getElementById("rehab-pet-image");
+let modalButton = document.getElementById("modal-btn");
 
 // Status colors
 let statusGreen = "#4ba400";

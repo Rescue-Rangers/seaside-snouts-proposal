@@ -174,7 +174,7 @@ footer {
     border-top-style: solid;
     border-width: 10px 0px 0px 0px;
     border-color: var(--seaside-yellow);
-    height: 150px;
+    height: auto;
  }
 
 
@@ -365,7 +365,7 @@ footer {
     }
     #feed-btn, #bathe-btn, #play-btn, #pet-btn {
         width: auto;
-        font-size: 1em;
+        font-size: .75em;
     }
     footer {
         width: 100%;
