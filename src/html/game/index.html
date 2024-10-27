@@ -18,12 +18,12 @@
         <section class="main-game">
             <h2 id="petName">HAMILTON</h2> <!--Placeholder to fill in with JS pet's name from home page-->
             <div class="pet-health">
-            <img class="pet-image" src="../../../assets/img/bluedolphin.png" alt="blue dolphin friend"><br>
-                <div class ="health-area">
-                    <label for="health-bar">HEALTH</label><br>
-                    <progress id="health-bar" value="25" max="25"> 100% </progress>
+                    <img id="main-pet-image" src="../../../assets/img/bluedolphin.png" alt="blue dolphin friend"><br>
+                    <div class ="health-area">
+                        <label for="health-bar">HEALTH</label><br>
+                        <progress id="health-bar" value="25" max="25"> 100% </progress>
+                    </div>
                 </div>
-            </div>
             <section class="stat-area">
                 <div class="stat-numbers"> <!--Numbers are placeholders for JS-->
                     <i class="fas fa-drumstick-bite hunger stat-icons"></i>
@@ -54,9 +54,21 @@
         <i class="fa-solid fa-ship"></i><br>
         <p>You couldn't save this friend, but don't worry, there are more who need your help.</p>
         
-        <button class="death-modal-button" onclick="location.href='../../../index.html'">Try again?</button>
+        <button class="modal-btn" onclick="location.href='../../../index.html'">Try again?</button>
       </div>
     </div>
+    <div id="rehab-container" class="modal">
+        <div id="rehab-modal-content">
+            <p id="congrats-names">Congrats, Krissy! Your friend has been rehabilitated.</p>
+            <p>You give them one last hug, tears shining in your eyes.</p>
+            <p>You then take them to their new habitat where friends are waiting for them.</p>
+            <img id="rehab-pet-image" src="https://placehold.co/150x150/png" alt="happy pet friend"><br>
+            <p id="pet-rehab">It's rough, but you know your friend will make it in the end.</p>
+            <p>Well done. There are more friends who need your help.</p>
+            
+            <button class="modal-btn" onclick="location.href='../../../index.html'">Adopt a new pet?</button>
+          </div>
+        </div>
         <footer>
             <nav class="footer-nav">
                 <ul>

@@ -12,6 +12,11 @@ let petNameH2 = document.getElementById("petName");
 let death = document.getElementById("death-container");
 let deathP = document.getElementById("name-pet-name");
 let deathSendOff = document.getElementById("pet-sendoff");
+let rehab = document.getElementById("rehab-container");
+let rehabP = document.getElementById("congrats-names");
+let rehabSendOff = document.getElementById("pet-rehab");
+let petImagePlace = document.getElementById("main-pet-image");
+let rehabImagePlace = document.getElementById("rehab-pet-image");
 
 // Status colors
 let statusGreen = "#4ba400";
@@ -22,8 +27,13 @@ let statusRed = "#ff3131";
 let animalType = localStorage.getItem('animalType');
 let userName = localStorage.getItem('userName');
 let petName = localStorage.getItem('petName');
+let petImage = localStorage.getItem('imgFile');
+let petImageAlt = localStorage.getItem('alt');
 petNameH2.innerHTML = petName;
-
+petImagePlace.src = petImage;
+petImagePlace.alt = petImageAlt;
+rehabImagePlace.src = petImage;
+rehabImagePlace.alt = petImageAlt;
 // Prompt libraries
 
 // feed prompts
@@ -342,7 +352,7 @@ let progressToRehab = 0;
 
 let progressEl = document.getElementById("progress");
 
-let progress = setInterval(checkPoints, 1000);
+let progress = setInterval(checkPoints, 500);
 function checkPoints() {
     let currentHun = +hungerNum.textContent;
     let currentHyg = +hygieneNum.textContent;
@@ -355,6 +365,10 @@ function checkPoints() {
     if (progressToRehab == 25) {
         clearInterval(progress);
         // Trigger successful rehabilitation modal here
+        rehabP.innerHTML = `Congrats, ${userName}! ${petName} has been rehabilitated.`
+        rehabSendOff.innerHTML = `It's rough, but you know ${petName} will make it in the end.`
+        rehab.style.visibility = "visible";
+
     }
     progressEl.innerHTML = `Progress to Rehabilitation: ${progressToRehab}/25`;
 }
