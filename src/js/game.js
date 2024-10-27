@@ -7,7 +7,10 @@ let hygieneNum2 = document.getElementById("hyg-num-two");
 let happinessNum2 = document.getElementById("hap-num-two");
 let fullHungerNum = document.getElementById("full-hun-num");
 let fullHygieneNum = document.getElementById("full-hyg-num");
-let fullHappinessNum = document.getElementById("full-hap-num"); 
+let fullHappinessNum = document.getElementById("full-hap-num");
+let fullHungerNum2 = document.getElementById("full-hun-num2");
+let fullHygieneNum2 = document.getElementById("full-hyg-num2");
+let fullHappinessNum2 = document.getElementById("full-hap-num2");  
 let petNameH2 = document.getElementById("petName");
 let death = document.getElementById("death-container");
 let deathP = document.getElementById("name-pet-name");
@@ -243,42 +246,51 @@ function colorChange() {
         fullHungerNum.style.color = statusGreen;
         hungerNum.style.color = statusGreen;
         hungerNum2.style.color = statusGreen;
+        fullHungerNum2.style.color = statusGreen;
     } else if ((currentNum < 8) && (currentNum > 4)) {
         fullHungerNum.style.color = statusOrange;
         hungerNum.style.color = statusOrange;
         hungerNum2.style.color = statusOrange;
+        fullHungerNum2.style.color = statusOrange;
     } else if ((currentNum <= 4) && (currentNum >= 0)) { 
         fullHungerNum.style.color = statusRed;
         hungerNum.style.color = statusRed;
         hungerNum2.style.color = statusRed;
+        fullHungerNum2.style.color = statusRed;
     }
     let currentNum2 = +hygieneNum.textContent;
     if (currentNum2 >= 8) {
         fullHygieneNum.style.color = statusGreen;
         hygieneNum.style.color = statusGreen;
         hygieneNum2.style.color = statusGreen;
+        fullHygieneNum2.style.color = statusGreen;
     } else if ((currentNum2 < 8) && (currentNum2 > 4)) {
         fullHygieneNum.style.color = statusOrange;
         hygieneNum.style.color = statusOrange;
         hygieneNum2.style.color = statusOrange;
+        fullHygieneNum2.style.color = statusOrange;
     } else if ((currentNum2 <= 4) && (currentNum2 >= 0)) { 
         fullHygieneNum.style.color = statusRed;
         hygieneNum.style.color = statusRed;
         hygieneNum2.style.color = statusRed;
+        fullHygieneNum2.style.color = statusRed;
     }
     let currentNum3 = +happinessNum.textContent;
     if (currentNum3 >= 8) {
         fullHappinessNum.style.color = statusGreen;
         happinessNum.style.color = statusGreen;
         happinessNum2.style.color = statusGreen;
+        fullHappinessNum2.style.color = statusGreen;
     } else if ((currentNum3 < 8) && (currentNum3 > 4)) {
         fullHappinessNum.style.color = statusOrange;
         happinessNum.style.color = statusOrange;
         happinessNum2.style.color = statusOrange;
+        fullHappinessNum2.style.color = statusOrange;
     } else if ((currentNum3 <= 4) && (currentNum3 >= 0)) { 
         fullHappinessNum.style.color = statusRed;
         happinessNum.style.color = statusRed;
         happinessNum2.style.color = statusRed;
+        fullHappinessNum2.style.color = statusRed;
     }
 
 }

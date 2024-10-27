@@ -101,6 +101,15 @@ section.stat-area {
 .numbers {
     display:none;
 }
+#full-hun-num2, #full-hun-num, #hun-num, #hun-num-two  {
+    color: var(--status-green);
+}
+#full-hyg-num2, #full-hyg-num, #hyg-num, #hyg-num-two  {
+    color: var(--status-green);
+}
+#full-hap-num2, #full-hap-num, #hap-num, #hap-num-two  {
+    color: var(--status-green);
+}
 .stat-buttons {
     display:grid;
     grid-template-columns: 25% 25% 25% 25%;
