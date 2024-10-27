@@ -17,7 +17,7 @@ const blueDolphin = new Pet("blue dolphin", "/assets/img/bluedolphin.png", "A dr
 
 const fish = new Pet("fish", "/assets/img/fish.png", "A drawing of a yellow and black-striped fish.");
 
-const flamingo = new Pet("flamingo", "assets/img/flamingo.png", "A drawing of a pink flamingo standing on one leg.");
+const flamingo = new Pet("flamingo", "/assets/img/flamingo.png", "A drawing of a pink flamingo standing on one leg.");
 
 const pinkDolphin = new Pet("pink dolphin", "/assets/img/pinkdolphin.png", "A drawing of a pink dolphin.");
 
