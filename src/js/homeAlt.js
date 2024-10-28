@@ -9,6 +9,7 @@ let abandonBtn = document.getElementById('abandonBtn');
 let abandonPet = document.getElementById('abandonPet');
 let returnToPet = document.getElementById('returnToPet');
 let modalBackground = document.getElementById('modalBackground');
+let confirmAbandon = document.getElementById('confirmAbandon');
 
 let pet = localStorage.getItem('animalType');
 let petName = localStorage.getItem('petName');
@@ -19,7 +20,9 @@ let alt = localStorage.getItem('alt');
 // Plug existing data into text
 welcomeH2[0].innerHTML = `Hi, ${userName}! Welcome back!`;
 textH3[0].innerHTML = `${petName} has missed you and your underwater adventure! You have the option to continue your journey of marine rescue and reconnect with ${petName}, or if you're ready to say goodbye, you can choose to abandon your pet.`;
-
+returnToPet.innerHTML = `Return to ${petName}`;
+abandonPet.innerHTML = `Abandon ${petName}`;
+confirmAbandon.innerHTML = `Are you sure? ${petName} will absolutely not survive without you. This cannot be undone!`
 imgSrc[0].src = imgFile;
 imgSrc[0].alt = alt;
 

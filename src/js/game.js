@@ -312,7 +312,7 @@ function colorChange() {
 let healthScore = 25;
 let progressBar = document.getElementsByTagName("progress");
 
-let gamePlay = setInterval(checkStatsDec, 3000);
+let gamePlay = setInterval(checkStatsDec, 2000);
 function checkStatsDec() {
     let currentHun = +hungerNum.textContent;
     let currentHyg = +hygieneNum.textContent;
@@ -378,7 +378,7 @@ let progressToRehab = 0;
 
 let progressEl = document.getElementById("progress");
 
-let progress = setInterval(checkPoints, 500);
+let progress = setInterval(checkPoints, 400);
 function checkPoints() {
     let currentHun = +hungerNum.textContent;
     let currentHyg = +hygieneNum.textContent;

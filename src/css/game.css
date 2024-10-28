@@ -10,6 +10,7 @@
 }
 body {
     margin: 0px;
+    background-color: var(--seaside-blue);
 }
 .main-game {
     background-image: url(../../assets/img/beach.png);
@@ -22,7 +23,7 @@ body {
 }
 
 main {
-    background-color: var(--seaside-white);
+    background-color: var(--seaside-blue);
     height: 100%;
     width: 100%;
 }
@@ -32,6 +33,7 @@ header {
     border-bottom-style: solid;
     border-width: 0px 0px 10px 0px;
     border-color: var(--seaside-yellow);
+    background-color: var(--seaside-blue);
 }
 h1 {
     text-align: center;
@@ -76,6 +78,7 @@ h3 {
     width: 80%;
     accent-color: var(--status-green);
 }
+
 .stat-icons {
     font-size: 25px;
 }
