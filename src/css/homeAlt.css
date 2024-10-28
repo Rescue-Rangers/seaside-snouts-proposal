@@ -66,6 +66,41 @@ footer {
     padding: 10px;
     border-radius: 10px;
 }
+.coming-soon , .fa-star {
+    color: #535353;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--seaside-navy);
+    color: var(--seaside-white);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 10% 10%;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
 
 h1 {
     margin-top: 0;
