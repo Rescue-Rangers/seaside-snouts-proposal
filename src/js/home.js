@@ -9,6 +9,7 @@ let petName = document.getElementById('petName');
 let petNameBtn = document.getElementById('petNameBtn');
 let pet = "";
 let imgSrc = document.getElementsByTagName('img');
+let modalBackground = document.getElementById('modalBackground');
 
 // Randomly generate pet and image
 //Set up each animal as a new object
@@ -16,7 +17,7 @@ const blueDolphin = new Pet("blue dolphin", "/assets/img/bluedolphin.png", "A dr
 
 const fish = new Pet("fish", "/assets/img/fish.png", "A drawing of a yellow and black-striped fish.");
 
-const flamingo = new Pet("flamingo", "assets/img/flamingo.png", "A drawing of a pink flamingo standing on one leg.");
+const flamingo = new Pet("flamingo", "/assets/img/flamingo.png", "A drawing of a pink flamingo standing on one leg.");
 
 const pinkDolphin = new Pet("pink dolphin", "/assets/img/pinkdolphin.png", "A drawing of a pink dolphin.");
 
@@ -39,6 +40,8 @@ imgSrc[0].alt = alt;
 
 // Add animal type to local storage to use on Game Page
 localStorage.setItem('animalType', pet);
+localStorage.setItem('imgFile', img);
+localStorage.setItem('alt', alt);
 
 //Set up modal actions
 // Validate and capture user's name, then open next modal
@@ -57,6 +60,7 @@ adoptBtn.addEventListener('click', function() {
         modalContent.innerHTML = `Congrats, ${userNameInput}! You have adopted a ${pet}! What would you like to name them?`;
         document.getElementById('userName').value = "";
         adoptModal.style.display = "block";
+        modalBackground.style.display = "initial";
         return userNameInput;
     }
 });
@@ -64,6 +68,7 @@ adoptBtn.addEventListener('click', function() {
 // Add close button functionality
 closeBtn[0].addEventListener('click', function() {
     adoptModal.style.display = "none";
+    modalBackground.style.display = "none";
 })
 
 // Validate and capture pet's name, then navigate user to Game page
@@ -83,11 +88,6 @@ petNameBtn.addEventListener('click', function() {
         return petNameInput;
     }
 })
-
-
-
-
-
 
 function checkForNumChar(input) {
     for (let i = 0; i < input.length; i++) {

@@ -10,6 +10,7 @@
 }
 body {
     margin: 0px;
+    background-color: var(--seaside-blue);
 }
 .main-game {
     background-image: url(../../assets/img/beach.png);
@@ -22,7 +23,7 @@ body {
 }
 
 main {
-    background-color: var(--seaside-white);
+    background-color: var(--seaside-blue);
     height: 100%;
     width: 100%;
 }
@@ -32,6 +33,7 @@ header {
     border-bottom-style: solid;
     border-width: 0px 0px 10px 0px;
     border-color: var(--seaside-yellow);
+    background-color: var(--seaside-blue);
 }
 h1 {
     text-align: center;
@@ -59,7 +61,7 @@ h3 {
     font-size: 20px;
     margin-bottom: 50px;
 }
-.pet-image {
+#main-pet-image {
     width: 30%;
 }
 .health-area {
@@ -69,11 +71,14 @@ h3 {
     border-width: 5px;
     border-color: var(--seaside-yellow);
     margin: auto;
+    border-radius: 5px;
 }
 /* Note: The way to change the progress bar color is accent-color */
 #health-bar {
     width: 80%;
+    accent-color: var(--status-green);
 }
+
 .stat-icons {
     font-size: 25px;
 }
@@ -85,6 +90,7 @@ section.stat-area {
     width: 60%;
     margin: 0px auto;
     padding: 30px;
+    border-radius: 5px;
 }
 .stat-numbers {
     display: grid;
@@ -100,6 +106,15 @@ section.stat-area {
 }
 .numbers {
     display:none;
+}
+#full-hun-num2, #full-hun-num, #hun-num, #hun-num-two  {
+    color: var(--status-green);
+}
+#full-hyg-num2, #full-hyg-num, #hyg-num, #hyg-num-two  {
+    color: var(--status-green);
+}
+#full-hap-num2, #full-hap-num, #hap-num, #hap-num-two  {
+    color: var(--status-green);
 }
 .stat-buttons {
     display:grid;
@@ -152,6 +167,7 @@ section.stat-area {
     margin: 20px auto;
     background-color: var(--seaside-white);
     width: 60%;
+    border-radius: 5px;
 }
 footer {
     background-color: var(--seaside-orange);
@@ -162,7 +178,7 @@ footer {
     border-top-style: solid;
     border-width: 10px 0px 0px 0px;
     border-color: var(--seaside-yellow);
-    height: 150px;
+    height: auto;
  }
 
 
@@ -180,6 +196,52 @@ footer {
     margin-top: 30px;
     font-size: 30px
 }
+#meet-page:hover {
+    background-color: var(--seaside-white);
+    padding: 10px;
+    border-radius: 10px;
+}
+#home-page:hover {
+    background-color: var(--seaside-white);
+    padding: 10px;
+    border-radius: 10px;
+}
+.coming-soon , .fa-star {
+    color: #535353;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+  
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--seaside-navy);
+    color: var(--seaside-white);
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 10% 10%;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 1s;
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+  
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
 .current-page {
     background-color: var(--seaside-white);
     padding: 10px;
@@ -194,6 +256,76 @@ footer {
 .colorChangeGreen {
     color: var(--status-green);
 }
+#death-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+
+}
+#death-modal-content {
+    height:auto;
+    width:70%;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 5);
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-color: aquamarine;
+    border-radius: 5px;
+    display: block;
+}
+.modal-btn {
+    background-color: var(--seaside-orange);
+    font-size: 1em;
+    width: 100px;
+    border-color: var(--seaside-yellow);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 8px;
+}
+.fa-ship {
+    font-size: 200px;
+    margin-bottom: 30px;
+}
+#rehab-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+}
+#rehab-modal-content {
+    height:auto;
+    width:70%;
+    border-width: 5px;
+    border-style: solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 5);
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-color: aquamarine;
+    border-radius: 5px;
+    display: block;
+}
+#rehab-pet-image {
+    width: 30%;
+}
+
 
 /* Responsive designs */
 @media screen and (max-width: 480px) {
@@ -218,7 +350,10 @@ footer {
         margin: 20px;
         padding: 0px 17px 0px 0px;
 }
-    .pet-image {
+    #main-pet-image {
+        width: 50%;
+    }
+    #rehab-pet-image {
         width: 50%;
     }
     section.stat-area {
@@ -234,7 +369,7 @@ footer {
     }
     #feed-btn, #bathe-btn, #play-btn, #pet-btn {
         width: auto;
-        font-size: 1em;
+        font-size: .75em;
     }
     footer {
         width: 100%;
