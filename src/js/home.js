@@ -1,3 +1,19 @@
+// lab 1 - Krissy fetch pets
+function getPets() {
+    return fetch('pets.json')
+    .then(response => response.json())
+}
+getPets().then(pets => {
+    const myPets = pets;
+    const myStringPets = JSON.stringify(myPets);
+    // console.log(myStringPets);
+    // console.log(myPets);
+    localStorage.setItem("store", myStringPets);
+    })
+const getMyPets =  localStorage.getItem("store");
+const parsePets = JSON.parse(getMyPets);
+const pets = parsePets.pets;
+console.log(pets);
 //#4 - Form for User's Name
 //Set up modal display
 let userName = document.getElementById('userName');
@@ -13,24 +29,12 @@ let modalBackground = document.getElementById('modalBackground');
 
 // Randomly generate pet and image
 //Set up each animal as a new object
-const blueDolphin = new Pet("blue dolphin", "/assets/img/bluedolphin.png", "A drawing of a blue dolphin.");
 
-const fish = new Pet("fish", "/assets/img/fish.png", "A drawing of a yellow and black-striped fish.");
 
-const flamingo = new Pet("flamingo", "/assets/img/flamingo.png", "A drawing of a pink flamingo standing on one leg.");
-
-const pinkDolphin = new Pet("pink dolphin", "/assets/img/pinkdolphin.png", "A drawing of a pink dolphin.");
-
-const turtle = new Pet("sea turtle", "/assets/img/turtle1.png", "A drawing of a neutral colored sea turtle.");
-
-const monkey = new Pet("monkey", "/assets/img/monkey.png", "A drawing of a happy monkey crouching.");
-
-const petLibrary = [blueDolphin, fish, flamingo, pinkDolphin, turtle, monkey];
 
 let randomIndex = Math.floor(Math.random() * 6);
 
-let userPet = petLibrary[randomIndex];
-
+let userPet = pets[randomIndex];
 pet = userPet.animalType;
 let img = userPet.imgFile;
 let alt = userPet.altText;
